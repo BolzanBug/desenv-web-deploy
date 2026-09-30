@@ -1,6 +1,23 @@
 import express from 'express'
+import 'dotenv/config'
 
 const app = express();
+
+app.use(express.json());
+
+app.post('/teste', (req, res) => {
+    let corpo = req.body
+
+
+
+    return res.status(200).send(
+        {
+            message: "opa",
+            corpo: corpo
+        }
+    )
+
+})
 
 app.get('/teste', (req, res) => {
     //return res.status(200).send('oi')
@@ -27,6 +44,6 @@ app.get('/teste/:id', (req, res) => {
     )
 })
 
-app.listen(3333, () => {
-    console.log('api iniciou');
+app.listen(process.env.API_PORT, () => {
+    console.log('API iniciou na Porta ' + process.env.API_PORT);
 })
