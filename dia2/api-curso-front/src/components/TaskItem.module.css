@@ -1,0 +1,121 @@
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.875rem;
+  min-height: 3.25rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Quadradinho desenhado a caneta */
+.check {
+  appearance: none;
+  margin: 0;
+  width: 1.375rem;
+  height: 1.375rem;
+  border: 2px solid var(--ink);
+  border-radius: 3px;
+  background: var(--white);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.check::after {
+  content: '';
+  width: 0.4rem;
+  height: 0.75rem;
+  border: solid var(--white);
+  border-width: 0 3px 3px 0;
+  transform: translateY(-1px) rotate(45deg) scale(0);
+  transition: transform 160ms ease-out;
+}
+
+.check:checked {
+  background: var(--ink);
+}
+
+.check:checked::after {
+  transform: translateY(-1px) rotate(45deg) scale(1);
+}
+
+.body {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.75rem;
+}
+
+.title {
+  padding: 0.25rem 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: text;
+  overflow-wrap: anywhere;
+}
+
+/* Risco de caneta: desenhado da esquerda para a direita ao concluir.
+   Feito com background para atravessar todas as linhas quando o título quebra. */
+.titleText {
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-repeat: no-repeat;
+  background-position: 0 58%;
+  background-size: 0% 2px;
+  transition:
+    background-size 420ms cubic-bezier(0.6, 0, 0.3, 1),
+    color 240ms ease;
+}
+
+.done .titleText {
+  color: var(--pencil);
+  background-size: 100% 2px;
+}
+
+.doneAt {
+  font-size: 0.875rem;
+  color: var(--pencil);
+  white-space: nowrap;
+}
+
+.editInput {
+  width: 100%;
+  padding: 0.2rem 0.4rem;
+  border: 0;
+  border-bottom: 2px solid var(--ink);
+  background: var(--white);
+}
+
+.editInput:focus-visible {
+  outline: none;
+}
+
+.delete {
+  padding: 0.35rem 0.6rem;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--margin);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  opacity: 0;
+}
+
+.item:hover .delete,
+.item:focus-within .delete,
+.delete:focus-visible {
+  opacity: 1;
+}
+
+.delete:hover {
+  background: rgb(217 68 63 / 0.1);
+}
+
+/* Telas de toque não têm hover: o botão fica sempre visível */
+@media (hover: none) {
+  .delete {
+    opacity: 1;
+  }
+}

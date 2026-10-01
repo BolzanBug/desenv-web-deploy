@@ -1,0 +1,77 @@
+.title {
+  margin: 1rem 0 0.25rem;
+  font-size: clamp(3rem, 10vw, 4.5rem);
+}
+
+.lead {
+  margin: 0 0 2rem;
+  color: var(--pencil);
+}
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 24rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.25rem;
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1.5px solid var(--rule);
+  border-radius: 4px;
+  background: var(--white);
+  font-weight: 400;
+}
+
+.field input:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgb(30 63 166 / 0.2);
+}
+
+.field small {
+  font-weight: 400;
+  color: var(--pencil);
+  font-size: 0.9rem;
+}
+
+.error {
+  margin: 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--margin);
+  color: #a3221e;
+}
+
+.submit {
+  justify-self: start;
+  padding: 0.65rem 1.5rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.submit:hover {
+  background: var(--ink-soft);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.switch {
+  margin-top: 2.5rem;
+}
+
+.switch a {
+  color: var(--ink);
+  font-weight: 700;
+}

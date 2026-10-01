@@ -1,0 +1,124 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.title {
+  margin: 0.5rem 0 0;
+  font-size: clamp(3rem, 11vw, 5rem);
+}
+
+.account {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--pencil);
+}
+
+.logout {
+  padding: 0.3rem 0.75rem;
+  border: 1.5px solid var(--rule);
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--graphite);
+}
+
+.logout:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* A próxima linha em branco do caderno */
+.newTask {
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.newTask input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.25rem;
+  border: 0;
+  background: transparent;
+  font-size: 1.125rem;
+}
+
+.newTask input::placeholder {
+  color: var(--pencil);
+}
+
+.newTask input:focus-visible {
+  outline: none;
+}
+
+.newTask:focus-within {
+  border-bottom-color: var(--ink-soft);
+}
+
+.newTask button {
+  padding: 0.5rem 1.1rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.newTask button:disabled {
+  background: var(--rule);
+  color: var(--pencil);
+  cursor: default;
+}
+
+.error {
+  margin: 0.75rem 0 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--margin);
+  color: #a3221e;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 1.75rem 0 0.25rem;
+}
+
+.filter {
+  padding: 0.25rem 0;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--pencil);
+}
+
+.filter:hover {
+  color: var(--graphite);
+}
+
+.filter[aria-pressed='true'] {
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom-color: var(--ink);
+}
+
+.count {
+  font-variant-numeric: tabular-nums;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.empty {
+  margin: 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--pencil);
+}

@@ -33,3 +33,13 @@ added 1 package, and audited 96 packages in 729ms
 
 found 0 vulnerabilities
 usuarios@C1-310-09:~/eventoUno/desenv-web-deploy$ 
+
+
+Comandos para alocar a swap do servidor:
+
+sudo	fallocate	-l	2G	/swapfile
+sudo	chmod	600	/swapfile
+sudo	mkswap	/swapfile
+sudo	swapon	/swapfile
+echo	'/swapfile	none	swap	sw	0	0'	|	sudo	tee	-a	/etc/fstab free	-h	
+
